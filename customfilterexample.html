@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" ng-app="myFirstApp">
+<html lang="en" dir="ltr" ng-app="customFilterApp">
 
 <head>
   <meta charset="utf-8">
   <script src="angular.min.js"></script>
-  <script src="app.js"></script>
-  <title>Hello Angularjs</title>
+  <script src="customfilterapp.js"></script>
+  <title>Creating Custom Filter</title>
 </head>
 
 <body>
-  <h1>My First Angularjs App</h1>
-  <div ng-controller="MyFirstController">
+  <h1>Custom filter will replace word hi to lovely</h1>
+  <div ng-controller="MyCustomFilterController">
 
     <input type="text" ng-model="name">
     <br>
@@ -26,6 +26,10 @@
       <br>
       <img ng-src="images/{{chosenImage}}.jpg"
     </div>
+    <br>
+    {{"Goodbye my Team!" | lovelier | uppercase}}
+    <br>
+    {{"I like my team" | replacer : 'like' : 'love' | lovelier | uppercase}}
   </div>
 </body>
 
